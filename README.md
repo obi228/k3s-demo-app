@@ -6,7 +6,7 @@
 
 ## Архитектура
 
-![Архитектура пайплайна](devops_pipeline_architecture.svg)
+![Архитектура пайплайна](docs/assets/devops_pipeline_architecture.svg)
 
 Поток выполнения:
 
@@ -53,13 +53,13 @@ prometheus-monitoring-kube-prometheus-prometheus-0        2/2     Running   8   
 
 Приложение отвечает на запросы через NodePort:
 
-![Ответ приложения](json_ответ_приложения_k3s.png)
+![Ответ приложения](docs/assets/json_ответ_приложения_k3s.png)
 
 ## CI/CD pipeline
 
 Workflow состоит из двух job'ов — сборка/публикация образа и деплой в кластер. Оба выполняются автоматически при пуше в `main`.
 
-![Успешный прогон pipeline](готовый_ci-cd.png)
+![Успешный прогон pipeline](docs/assets/готовый_ci-cd.png)
 
 ## Мониторинг
 
@@ -67,19 +67,19 @@ Workflow состоит из двух job'ов — сборка/публикац
 
 **Kubernetes / API server** — здоровье и производительность control-plane:
 
-![Grafana API server](графана_апи_.png)
+![Grafana API server](docs/assets/графана_апи_.png)
 
 **Kubernetes / Compute Resources / Cluster** — потребление CPU и памяти по неймспейсам:
 
-![Grafana ресурсы кластера](графана_ресурсы_кластера_.png)
+![Grafana ресурсы кластера](docs/assets/графана_ресурсы_кластера_.png)
 
 **Alertmanager / Overview** — готовая интеграция с каналами оповещений (Slack, Discord, email, PagerDuty и др.):
 
-![Grafana Alertmanager](графана_алертменеджер.png)
+![Grafana Alertmanager](docs/assets/графана_алертменеджер.png)
 
 Все таргеты Prometheus в состоянии `UP`:
 
-![Prometheus targets](прометеус_.png)
+![Prometheus targets](docs/assets/прометеус_.png)
 
 ## Как развернуть
 
