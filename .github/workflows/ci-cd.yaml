@@ -47,6 +47,7 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
+            export KUBECONFIG=/home/user48/.kube/config
             cd ~/k3s-demo-app
             git pull
             kubectl apply -f k8s/deployment.yaml
